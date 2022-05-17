@@ -1,0 +1,407 @@
+## PROD HOST ####
+
+Host ansible-bouba-test.westeurope.cloudapp.azure.com
+  HostName ansible-bouba-test.westeurope.cloudapp.azure.com
+  User Bouba
+
+Host bastion
+  HostName 10.20.109.149
+  User octo
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+  
+Host sonarqube
+  HostName 10.249.72.168
+  User aiviadmin
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+  
+  
+
+Host preprod_vm
+  HostName 10.188.194.168
+  User AIVIadmin
+  ProxyCommand ssh -A bastion -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host roermond_vm
+ HostName 10.202.214.20
+ User AIVIadmin
+ ProxyCommand ssh -A bastion -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+
+Host roermond_edgestation
+ HostName 10.202.214.22
+ User aiviadmin
+ ProxyCommand ssh -A roermond_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+ 
+Host nlrmpvid003
+ HostName 10.202.214.23
+ User aiviadmin
+ ProxyCommand ssh -A roermond_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+
+Host spb_vm
+ HostName 10.208.246.240
+ User AIVIadmin
+ ProxyCommand ssh -A bastion -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+
+Host spb_edgestation1
+ HostName 10.208.246.21
+ User aiviadmin
+ ProxyCommand ssh -A spb_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+
+
+
+
+Host madison_vm
+  HostName 10.132.230.21
+  User AIVIadmin
+  ProxyCommand ssh -A bastion -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host madison_19
+  HostName 10.132.230.30
+  User aiviadmin
+  ProxyCommand ssh -A madison_vm -W %h:%p
+Host madison_22
+  HostName 10.132.230.31
+  User aiviadmin
+  ProxyCommand ssh -A madison_vm -W %h:%p
+Host madison_rework
+  HostName 10.132.230.32
+  User aiviadmin
+  ProxyCommand ssh -A madison_vm -W %h:%p
+Host madison_13
+  HostName 10.132.230.33
+  User aiviadmin
+  ProxyCommand ssh -A madison_vm -W %h:%p
+
+Host plzen_vm
+  HostName 10.188.118.20
+  User AIVIadmin
+  ProxyCommand ssh -A bastion -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host plzen_reg2ur20
+  HostName 10.188.118.12
+  User aiviadmin
+  ProxyCommand ssh -A plzen_vm -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host plzen_reg2ur22
+  HostName 10.188.118.13
+  User aiviadmin
+  ProxyCommand ssh -A plzen_vm -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host plzen_un14
+  HostName 10.188.118.14
+  User aiviadmin
+  ProxyCommand ssh -A plzen_vm -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+  
+Host plzen_un16
+  HostName 10.188.118.16
+  User aiviadmin
+  ProxyCommand ssh -A plzen_vm -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+  
+Host plzen_un15
+ HostName 10.188.118.15
+ User aiviadmin
+ ProxyCommand ssh -A plzen_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+  
+ 
+
+
+Host trnava_vm
+ HostName 10.193.118.11
+ User AIVIadmin
+ ProxyCommand ssh -A bastion -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host sk_trn_1rowleft9
+ HostName 10.193.118.22
+ User aiviadmin
+ ProxyCommand ssh -A trnava_vm -W %h:%p
+Host sk_trn_1rowright9
+ HostName 10.193.118.23
+ User aiviadmin
+ ProxyCommand ssh -A trnava_vm -W %h:%p
+Host sk_trn_2rowfin
+ HostName 10.193.118.24
+ User aiviadmin
+ ProxyCommand ssh -A trnava_vm -W %h:%p
+
+Host sk_assesment
+ HostName 10.193.118.25
+ User aiviadmin
+ ProxyCommand ssh -A trnava_vm -W %h:%p
+
+Host lozorno_vm
+  HostName 10.192.246.80
+  User AIVIadmin
+  ProxyCommand ssh -A bastion -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host lozorno_edgestation1
+  HostName 10.192.246.81
+  User aiviadmin
+  ProxyCommand ssh -A lozorno_vm -W %h:%p
+  
+Host lajanais_vm
+  HostName 10.53.235.80
+  User AIVIadmin
+  ProxyCommand ssh -A bastion -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host lajanais_edgestation1
+  HostName 10.53.235.81
+  User aiviadmin
+  ProxyCommand ssh -A lajanais_vm -W %h:%p
+  
+Host valladolid_vm
+  HostName 10.66.166.20
+  User AIVIadmin
+  ProxyCommand ssh -A bastion -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+  
+Host valladolid_right
+  HostName 10.66.166.21
+  User aiviadmin
+  ProxyCommand ssh -A valladolid_vm -W %h:%p
+  
+Host valladolid_left
+  HostName 10.66.166.22
+  User aiviadmin
+  ProxyCommand ssh -A valladolid_vm -W %h:%p
+  
+Host val4
+  HostName 10.66.166.24
+  User aiviadmin
+  ProxyCommand ssh -A valladolid_vm -W %h:%p
+  
+Host val5
+  HostName 10.66.166.30
+  User aiviadmin
+  ProxyCommand ssh -A valladolid_vm -W %h:%p
+
+Host fsf_vm
+  HostName 10.50.182.11
+  User AIVIadmin
+  ProxyCommand ssh -A bastion -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host fsf_edgestation
+  HostName 10.50.182.12
+  User aiviadmin
+  ProxyCommand ssh -A fsf_vm -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host pamplona_vm
+  HostName 10.69.162.11
+  User AIVIadmin
+  ProxyCommand ssh -A bastion -W %h:%p
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host pamplona_edgestation1
+  HostName 10.69.162.12
+  User aiviadmin
+  ProxyCommand ssh -A pamplona_vm -W %h:%p
+  
+ 
+Host vigo_vm
+ HostName 10.70.230.20
+ User AIVIadmin
+ ProxyCommand ssh -A bastion -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+Host es_vig_c12savg
+ HostName 10.70.230.21
+ User aiviadmin
+ ProxyCommand ssh -A vigo_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host es_vig_c12savd
+ HostName 10.70.230.22
+ User aiviadmin
+ ProxyCommand ssh -A vigo_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host es_vig_2rowfin
+ HostName 10.70.230.23
+ User aiviadmin
+ ProxyCommand ssh -A vigo_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host sielest_vm
+ HostName 10.59.166.11
+ User AIVIadmin
+ ProxyCommand ssh -A bastion -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+Host sielest_avg02
+ HostName 10.59.166.12
+ User aiviadmin
+ ProxyCommand ssh -A sielest_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host sielest_avg05
+ HostName 10.59.166.13
+ User aiviadmin
+ ProxyCommand ssh -A sielest_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host sielest_avd02
+ HostName 10.59.166.14
+ User aiviadmin
+ ProxyCommand ssh -A sielest_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host sielest_avd05
+ HostName 10.59.166.15
+ User aiviadmin
+ ProxyCommand ssh -A sielest_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+
+
+Host spb_vm
+ HostName 10.208.246.240
+ User AIVIadmin
+ ProxyCommand ssh -A bastion -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+Host spb_edgestation1
+ HostName 10.208.246.21
+ User aiviadmin
+ ProxyCommand ssh -A spb_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+
+## Etupes 
+
+Host etupes_vm
+ HostName 10.63.150.20
+ User AIVIadmin
+ ProxyCommand ssh -A bastion -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+Host etupe_edgestation1
+ HostName 10.63.150.21
+ User aiviadmin
+ ProxyCommand ssh -A etupes_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host etupe_edgestation2
+ HostName 10.63.150.22
+ User aiviadmin
+ ProxyCommand ssh -A etupes_vm -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+Host kennelbach_vm
+ HostName 10.206.62.30
+ User AIVIadmin
+ ProxyCommand ssh -A bastion -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+
+
+#### Azure Host ###
+
+Host fcm-qualif
+ HostName aivi-fcm-component-verification-rrm-1.westeurope.cloudapp.azure.com
+ User aiviadmin
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+
+Host bastion-dsf
+  HostName dsf-classic-bastion.westeurope.cloudapp.azure.com
+  User diallobo
+ 
+
+Host fcmedgestation
+ HostName 10.249.113.164
+ User aiviadmin
+ ProxyCommand ssh -A bastion-dsf -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+
+Host fasfcmcentral
+ HostName 10.249.113.165
+ User diallobo
+ ProxyCommand ssh -A bastion-dsf -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+
+Host Spacewalkserver
+ HostName 51.145.174.251
+ User ansible
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+
+ ### Lumière Host ###
+ 
+ Host Centralumiere
+ HostName 172.23.1.254
+ User AIVIadmin
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+ Host Qualiflumiere
+ HostName 172.16.2.41
+ User aiviadmin
+ ProxyCommand ssh -A Centralumiere -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+ 
+ Host QualifFAS
+ HostName 172.16.2.40
+ User aiviadmin
+ ProxyCommand ssh -A Centralumiere -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+ 
+ Host New
+ HostName 172.16.2.52
+ User aiviadmin
+ ProxyCommand ssh -A Centralumiere -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ 
+
+ Host Inference01
+ HostName 172.16.2.142
+ User aiviadmin
+ ProxyCommand ssh -A Centralumiere -W %h:%p
+ IdentityFile C:\Users\1diallob\.ssh\id_rsa
+ ### Preprod Host ##
+ 
+ 
+Host preprod_vm
+  HostName 10.188.194.168
+  User AIVIadmin
+  
+Host preprod_edgestation1
+  HostName 10.188.207.157
+  User aiviadmin
+  ProxyCommand ssh -A preprod_vm -W %h:%p
+  
+  Host preprod
+  HostName 172.23.1.26
+  User aiviadmin
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+  
+  Host jump
+  HostName 10.53.104.13
+  User aiviadmin
+  IdentityFile C:\Users\1diallob\.ssh\id_rsa
+  
+ 
+ 
+ 
+ 
+
